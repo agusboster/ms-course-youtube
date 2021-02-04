@@ -1,5 +1,6 @@
 server:
   port: 8099
+  waitTimeInMsWhenSyncEmpty: 0
 
 eureka:
   instance:
@@ -8,23 +9,4 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-    username: sa
-    password:
-
-  # ===============================
-  # JPA / HIBERNATE
-  # ===============================
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    database-platform: org.hibernate.dialect.H2Dialect
-    properties:
-      hibernate:
-        show_sql: true
-        use_sql_comments: false
-        format_sql: false
-logging:
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
